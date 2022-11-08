@@ -9,7 +9,7 @@ function App() {
       <Header />
       <Sidebar />
       <div className="wrap-center">
-      <Profil />
+        <Profil />
       </div>
     </div>
   );

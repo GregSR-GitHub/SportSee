@@ -1,0 +1,39 @@
+.infos-card{
+    background-color: #FBFBFB;
+    width: 100%;
+    height: 124px;
+    border-radius: 5px;
+    padding: 32px;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.infos-card_icon{
+    width: 60px;
+    height: 60px;
+}
+
+.infos-icon{
+    width: 60px;
+}
+
+
+.infos-card_text{
+    width: 100%;
+    height: 60px;
+    padding-left: 24px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.infos-card_infos{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.infos-card_name{
+    font-size: 14px;
+    color: #74798C;
+}

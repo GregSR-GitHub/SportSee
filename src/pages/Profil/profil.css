@@ -22,7 +22,7 @@
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1.2fr 0.8fr;
+    grid-template-rows: 1.1fr 0.9fr; 
     grid-auto-rows: 1fr;
     gap: 30px 30px;
     grid-auto-flow: row;
@@ -60,3 +60,12 @@
   
   .chart-04 { grid-area: chart-04; }
   
+  .background_chart{
+    background-color: #FBFBFB;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    padding: 32px;
+    display: flex;
+    flex-flow: row nowrap;
+}
