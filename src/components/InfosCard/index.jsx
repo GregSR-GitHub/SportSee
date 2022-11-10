@@ -1,4 +1,5 @@
 import './infoscard.css';
+import PropTypes from 'prop-types'
 
 function InfosCard({name, infos, icon}) {
 
@@ -13,6 +14,12 @@ function InfosCard({name, infos, icon}) {
         </div>
     </aside>
   );
+}
+
+InfosCard.propTypes = {
+  name: PropTypes.string,
+  infos: PropTypes.string,
+  sicon: PropTypes.string,
 }
 
 export default InfosCard;

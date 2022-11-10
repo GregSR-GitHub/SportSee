@@ -4,15 +4,13 @@ import PropTypes from 'prop-types'
 
 
 function Score({score}) {
-    
-    const myscore = Number(score);
-    const fillgray = 100 - myscore;
+    const fillgray = 100 - score;
     const data01 = [
   { name: "Center", value: 100 },
 ];
 const data02 = [
   { name: "A1", value: fillgray},
-  { name: "D2", value:  myscore }
+  { name: "D2", value:  score }
 ];
 
 console.log(score);
@@ -46,7 +44,7 @@ console.log(score);
             >
                 <Cell fill="#FBFBFB" />
                 <Cell fill="#FF0000" />
-                <Label width={60} position="center" className='label-score' fontSize='26px'>{myscore + '%'}</Label>
+                <Label width={60} position="center" className='label-score' fontSize='26px'>{score + '%'}</Label>
                 <Label width={80} position="center"  className='label-score-text' fontSize='16px' fill={'#74798C'} >de votre score</Label>
             </Pie>
     </PieChart>
@@ -55,7 +53,7 @@ console.log(score);
 }
 
 Score.propTypes = {
-    scrore: PropTypes.number,
+    score: PropTypes.number,
 }
  
 
