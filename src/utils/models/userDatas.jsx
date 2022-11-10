@@ -3,15 +3,15 @@ import { Component } from 'react'
 class UserDatas extends Component {
     constructor (data) {
         super(data)
-        this._id = data.user_main_datas.id
-        this._firstName = data.user_main_datas.userInfos.firstName
-        this._lastName = data.user_main_datas.userInfos.lastName
-        this._age = data.user_main_datas.userInfos.age
-        this._todayScore = data.user_main_datas.todayScore
-        this._calorieCount = data.user_main_datas.keyData.calorieCount
-        this._proteinCount = data.user_main_datas.keyData.proteinCount
-        this._carbohydrateCount = data.user_main_datas.keyData.carbohydrateCount
-        this._lipidCount = data.user_main_datas.keyData.lipidCount
+        this._id = data.id
+        this._firstName = data.userInfos.firstName
+        this._lastName = data.userInfos.lastName
+        this._age = data.userInfos.age
+        this._todayScore = data.todayScore
+        this._calorieCount = data.keyData.calorieCount
+        this._proteinCount = data.keyData.proteinCount
+        this._carbohydrateCount = data.keyData.carbohydrateCount
+        this._lipidCount = data.keyData.lipidCount
       }
 
     
@@ -32,7 +32,7 @@ class UserDatas extends Component {
   }
 
   get todayScore () {
-    return this._todayScore
+    return this._todayScore * 100
   }
 
   get calorieCount () {

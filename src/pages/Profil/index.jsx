@@ -4,14 +4,15 @@ import carbs_icon from '../../assets/carbs-icon.png';
 import protein_icon from '../../assets/protein-icon.png';
 import fat_icon from '../../assets/fat-icon.png';
 import InfosCard from '../../components/InfosCard';
+import Score from '../../components/Score';
 import Datas from '../../datas/datas.json';
 import UserDatas from '../../utils/models/userDatas';
 
 // console.log(typeof UserData +'type');
 function Profil() {
 
-    const userDatas = new UserDatas(Datas);
-    // console.log(userData.age);
+    const userDatas = new UserDatas(Datas.user_main_datas);
+    console.log(userDatas);
     // const user_key_datas = Datas.user_main_datas.keyData;
   return (
     <div className="profil">
@@ -35,7 +36,7 @@ function Profil() {
         </div>
         <div className="chart-02"><div className='background_chart'>B</div></div>
         <div className="chart-03"><div className='background_chart'>C</div></div>
-        <div className="chart-04"><div className='background_chart'>D</div></div>
+        <div className="chart-04"><Score score={userDatas.todayScore} /></div>
       </section>
     </div>
   );
