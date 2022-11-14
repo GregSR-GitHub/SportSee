@@ -13,8 +13,9 @@
 
 .score h2{
     position: absolute;
-    top: 5px;
-    left: 15px;
+    font-size: 15px;
+    top: 30px;
+    left: 35px;
 }
 
 .label-score {

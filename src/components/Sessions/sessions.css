@@ -1,0 +1,43 @@
+.sessions{
+    position: relative;
+    background-color: #FF0000;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    padding: 6px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: flex-end;
+    color:  white;
+}
+
+.session-tooltip{
+    background-color: white;
+    color: black;
+    border: 0;
+    font-size: 10px;
+    padding: 5px 10px;
+}
+
+.sessions h2{
+    width: 150px;
+    position: absolute;
+    color: white;
+    font-size: 15px;
+    opacity: 50%;
+    top: 30px;
+    left: 35px;
+    text-align: left;
+}
+
+.weekend{
+    width: 39%;
+    height: 100%;
+    position: absolute;
+    background-color: black;
+    font-size: 15px;
+    opacity: 10%;
+    top: 0px;
+    right: 0px;
+}
