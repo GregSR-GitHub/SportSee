@@ -19,7 +19,7 @@ function Sessions({datas}) {
       <div className="sessions">
         <h2>Durée moyenne des sessions</h2>
         <div className='weekend'></div>
-        <ResponsiveContainer height={175}>
+        <ResponsiveContainer height="75%">
         <LineChart 
           data={datas}
           margin={{

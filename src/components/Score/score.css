@@ -4,7 +4,7 @@
     width: 100%;
     height: 100%;
     border-radius: 5px;
-    padding: 32px;
+    padding: 5px;
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
@@ -14,8 +14,9 @@
 .score h2{
     position: absolute;
     font-size: 15px;
-    top: 30px;
-    left: 35px;
+    top: 24px;
+    left: 30px;
+    z-index: 10;
 }
 
 .label-score {

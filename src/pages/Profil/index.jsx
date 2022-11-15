@@ -7,10 +7,12 @@ import InfosCard from '../../components/InfosCard';
 import Score from '../../components/Score';
 import Performances from '../../components/Performances';
 import Sessions from '../../components/Sessions';
+import Activity from '../../components/Activity';
 import Datas from '../../datas/datas.json';
 import UserDatas from '../../utils/models/userDatas';
 import PerformanceDatas from '../../utils/models/performanceDatas';
 import SessionsDatas from '../../utils/models/sessionsDatas';
+import ActivityDatas from '../../utils/models/activityDatas';
 
 // console.log(typeof UserData +'type');
 function Profil() {
@@ -18,14 +20,15 @@ function Profil() {
     const userDatas = new UserDatas(Datas.user_main_datas);
     const performanceDatas = new PerformanceDatas(Datas.user_performance);
     const sessionsDatas = new SessionsDatas(Datas.user_sessions);
-    console.log(sessionsDatas.datas);
+    const activityDatas = new ActivityDatas(Datas.user_activity);
+    console.log(activityDatas.datas);
     // const user_key_datas = Datas.user_main_datas.keyData;
   return (
     <div className="profil">
       <h1>Bienvenue <span className="red">{userDatas.firstName}</span></h1>
       <span className="title_text">Félicitation ! Vous avez explosé vos objectifs hier 👏</span>
       <section className="profil_graph">
-        <div className="chart-01"></div>
+        <div className="chart-01"><Activity  datas={activityDatas.datas}/></div>
         <div className="infos">
             <div className="info-01">
                 <InfosCard name="Calories" infos={userDatas.calorieCount} icon={calories_icon}/>

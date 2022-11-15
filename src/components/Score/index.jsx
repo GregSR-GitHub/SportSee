@@ -1,5 +1,5 @@
 import './score.css';
-import { PieChart, Pie, Cell, Label } from "recharts";
+import { PieChart, Pie, Cell, Label,  ResponsiveContainer } from "recharts";
 import PropTypes from 'prop-types'
 
 
@@ -17,13 +17,14 @@ console.log(score);
   return (
     <div className="score">
         <h2>Score</h2>
-          <PieChart width={210} height={210}>
+        <ResponsiveContainer>
+          <PieChart width="100%">
             <Pie
                 data={data01}
                 dataKey="value"
-                cx={105}
-                cy={105}
-                outerRadius={85}
+                cx="50%"
+                cy="50%"
+                outerRadius={70}
                 fill="#FFFFFF"
                 isAnimationActive={false}
             />
@@ -32,13 +33,13 @@ console.log(score);
                 legendType="circle"
                 data={data02}
                 dataKey="value"
-                cx={105}
-                cy={105}
+                cx="50%"
+                cy="50%"
                 startAngle={90}
                 endAngle={-270}
                 cornerRadius={100}
-                innerRadius={85}
-                outerRadius={100}
+                innerRadius={70}
+                outerRadius={80}
                 fill="#FF0000"
                 isAnimationActive={false}
             >
@@ -47,7 +48,8 @@ console.log(score);
                 <Label width={60} position="center" className='label-score' fontSize='26px'>{score + '%'}</Label>
                 <Label width={80} position="center"  className='label-score-text' fontSize='16px' fill={'#74798C'} >de votre score</Label>
             </Pie>
-    </PieChart>
+      </PieChart>
+    </ResponsiveContainer>
     </div>
   );
 }

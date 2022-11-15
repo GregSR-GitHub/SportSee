@@ -1,6 +1,6 @@
 .profil{
     width: 100%;
-    padding: 60px 5%;
+    padding: 60px 4% 30px;
     display: flex;
     flex-flow: column nowrap;
     align-items: flex-start;
@@ -33,16 +33,9 @@
   
   .chart-01 { grid-area: chart-01; }
   
-  .infos {  display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    gap: 39px 0px;
-    grid-auto-flow: row;
-    grid-template-areas:
-      "info-01"
-      "info-02"
-      "info-03"
-      "info-04";
+  .infos {   display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
     grid-area: infos;
   }
   
