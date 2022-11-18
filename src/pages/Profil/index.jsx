@@ -8,21 +8,37 @@ import Score from '../../components/Score';
 import Performances from '../../components/Performances';
 import Sessions from '../../components/Sessions';
 import Activity from '../../components/Activity';
-import Datas from '../../datas/datas.json';
+// import Datas from '../../datas/datas.json';
+import { useApi } from '../../utils/Api';
 import UserDatas from '../../utils/models/userDatas';
 import PerformanceDatas from '../../utils/models/performanceDatas';
 import SessionsDatas from '../../utils/models/sessionsDatas';
 import ActivityDatas from '../../utils/models/activityDatas';
 
 // console.log(typeof UserData +'type');
-function Profil() {
 
-    const userDatas = new UserDatas(Datas.user_main_datas);
-    const performanceDatas = new PerformanceDatas(Datas.user_performance);
-    const sessionsDatas = new SessionsDatas(Datas.user_sessions);
-    const activityDatas = new ActivityDatas(Datas.user_activity);
-    console.log(activityDatas.datas);
-    // const user_key_datas = Datas.user_main_datas.keyData;
+ function Profil() {
+    const  userId = 12;
+    const  apiUserData  =  useApi(`http://localhost:3000/user/${userId}`);
+    const  apiPerformanceData  =  useApi(`http://localhost:3000/user/${userId}/performance`);
+    const  apiSessionData  =  useApi(`http://localhost:3000/user/${userId}/average-sessions`);
+    const  apiActivityData  =  useApi(`http://localhost:3000/user/${userId}/activity`);
+    let userDatas = {};
+    let performanceDatas = {};
+    let sessionsDatas = {};
+    let activityDatas = {};
+ 
+      if(apiUserData && apiPerformanceData && apiSessionData && apiActivityData){ 
+       console.log(apiUserData.data);
+       userDatas = new UserDatas(apiUserData.data);
+       performanceDatas = new PerformanceDatas(apiPerformanceData.data);
+       sessionsDatas = new SessionsDatas(apiSessionData.data);
+       activityDatas = new ActivityDatas(apiActivityData.data);  
+      }
+
+
+ 
+    
   return (
     <div className="profil">
       <h1>Bienvenue <span className="red">{userDatas.firstName}</span></h1>

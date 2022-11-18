@@ -13,7 +13,6 @@ const data02 = [
   { name: "D2", value:  score }
 ];
 
-console.log(score);
   return (
     <div className="score">
         <h2>Score</h2>

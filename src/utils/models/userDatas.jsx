@@ -8,6 +8,7 @@ class UserDatas extends Component {
         this._lastName = data.userInfos.lastName
         this._age = data.userInfos.age
         this._todayScore = data.todayScore
+        this._score = data.score
         this._calorieCount = data.keyData.calorieCount
         this._proteinCount = data.keyData.proteinCount
         this._carbohydrateCount = data.keyData.carbohydrateCount
@@ -32,7 +33,12 @@ class UserDatas extends Component {
   }
 
   get todayScore () {
-    return this._todayScore * 100
+    if(this._score){
+      return this._score * 100
+    }else{
+      return this._todayScore * 100
+    }
+    
   }
 
   get calorieCount () {
