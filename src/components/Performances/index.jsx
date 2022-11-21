@@ -1,5 +1,12 @@
+/**
+ * Display au chart based of the performences datas
+ * @param { Array } datas
+ * @return { String }
+ */
+
 import './performances.css';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
+import PropTypes from 'prop-types'
 
 function Performances({datas}) {
 
@@ -14,6 +21,15 @@ function Performances({datas}) {
         </ResponsiveContainer>
       </div>
     );
+}
+
+Performances.propTypes = {
+  datas: PropTypes.arrayOf(
+    PropTypes.shape({
+      kind: PropTypes.string,
+      value: PropTypes.number
+    })
+  )
 }
 
 export default Performances;
