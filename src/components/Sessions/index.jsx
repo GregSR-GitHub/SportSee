@@ -1,11 +1,11 @@
 /**
- * Display au chart based of the session datas
+ * Display a chart based of the session datas
  * @param { Array } datas
  * @return { String }
  */
 
 import './sessions.css';
-import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer, Rectangle } from 'recharts';
 import PropTypes from 'prop-types'
 
 function Sessions({datas}) {
@@ -21,16 +21,19 @@ function Sessions({datas}) {
       
         return null;
       };
+    
+      const CustomCursor = props => {
+        return <Rectangle fill="black" stroke="black" x={props.points[0].x} y={props.y} width={props.width} height={500} opacity={0.1} />;
+    };
 
     return (
       <div className="sessions">
         <h2>Durée moyenne des sessions</h2>
-        <div className='weekend'></div>
-        <ResponsiveContainer height="75%">
+        <ResponsiveContainer height="100%">
         <LineChart 
           data={datas}
           margin={{
-            top: 5,
+            top: 75,
             right: 0,
             left: 0,
             bottom: 20,
@@ -43,7 +46,7 @@ function Sessions({datas}) {
             </linearGradient>
         </defs>
           <XAxis dataKey="day" axisLine={false} tickLine={false} tickMargin="15"  stroke="#FFFFFF" opacity={0.5} padding={{ left: 20, right: 20 }}/>
-          <Tooltip  content={<CustomTooltip />} wrapperStyle={{ outline: 'none' }}  cursor={false}/>
+          <Tooltip  content={<CustomTooltip />} wrapperStyle={{ outline: 'none' }}  cursor={<CustomCursor />}/>
           <Line type="monotone" dataKey="value"  stroke="url(#colorDay)"  strokeWidth={2}  dot={false} activeDot={{ r: 3 }} />
         </LineChart>
         </ResponsiveContainer>

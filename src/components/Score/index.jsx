@@ -1,3 +1,9 @@
+/**
+ * Display a chart based of the score datas
+ * @param { Number } score
+ * @return { String }
+ */
+
 import './score.css';
 import { PieChart, Pie, Cell, Label,  ResponsiveContainer } from "recharts";
 import PropTypes from 'prop-types'

@@ -1,3 +1,9 @@
+/**
+ * Reformate sessions datas for Recharts chart
+ * @param { Object } data
+ * @return { Object }
+ */
+
 import { Component } from 'react'
 
 class SessionsDatas extends Component {
@@ -17,19 +23,27 @@ class SessionsDatas extends Component {
         this._chartData = []
       }
 
-    
-  get userIdid () {
-    return this._userIdid
-  }
+    /**
+     * Get the user id value.
+     * @return {Number} userid.
+     */      
+    get userIdid () {
+        return this._userIdid
+    }
 
-  get datas () {
-    this._chartData = []
-    this._sessions.forEach(element => {
-        let newSession = {};
-        newSession["day"] = this._days[element.day];
-        newSession["value"] = element.sessionLength;
-        this._chartData.push(newSession);
-    });
+    /**
+      * Get the reformated sessions datas for this user.
+      * @return {Array} sessions data.
+      */ 
+    get datas () {
+        this._chartData = []
+        // Remplace "day" value by its first letter for each object of the array.
+        this._sessions.forEach(element => {
+            let newSession = {};
+            newSession["day"] = this._days[element.day];
+            newSession["value"] = element.sessionLength;
+            this._chartData.push(newSession);
+        });
     return  this._chartData
     
   }

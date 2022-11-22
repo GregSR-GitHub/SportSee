@@ -13,9 +13,8 @@ You will need the project back-end, avaible here https://github.com/OpenClassroo
 
 ### 2.1 Prerequisites
 
-- a IDE: [(VSCode Recommended)](https://code.visualstudio.com/)
+- IDE: [(VSCode Recommended)](https://code.visualstudio.com/)
 - [NodeJS (**version 12.18**)](https://nodejs.org/en/)
-- [Yarn](https://yarnpkg.com/)
 - [Npm](https://www.npmjs.com/)
 
 ### 2.2 Starting the project
@@ -38,7 +37,7 @@ $ npm install
 
 ### 2.2 Launching the project
 
-- Launch the back-end [following back-end README](https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard)
+- Launch the back-end [following the back-end README](https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard)
 - Launch the front-end with npm:
 ```
 $ npm start

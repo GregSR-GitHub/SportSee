@@ -1,5 +1,5 @@
 /**
- * Display au chart based of the performences datas
+ * Display a chart based of the performences datas
  * @param { Array } datas
  * @return { String }
  */

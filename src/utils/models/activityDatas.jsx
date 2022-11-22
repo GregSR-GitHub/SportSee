@@ -1,3 +1,9 @@
+/**
+ * Reformate activity datas for Recharts chart
+ * @param { Object } data
+ * @return { Object }
+ */
+
 import { Component } from 'react'
 
 class ActivityDatas extends Component {
@@ -6,20 +12,28 @@ class ActivityDatas extends Component {
         this._userId = data.userId
         this._sessions = data.sessions
         this._chartData = []
-      }
+    }
 
-    
-  get userIdid () {
-    return this._userIdid
-  }
+    /**
+      * Get the user id value.
+      * @return {Number} The id.
+      */  
+    get userId () {
+        return this._userId
+    }
 
-  get datas () {
-    let currentNumber = 1;
-    this._sessions.forEach(element => {
-        element["number"] = currentNumber;
-        currentNumber++
-    });
-    return  this._sessions
+    /**
+      * Get the reformated sessions datas for this user.
+      * @return {Array} The data.
+      */ 
+    get datas () {
+        let currentNumber = 1;
+        // Add "number" propriety for each object of the array.
+        this._sessions.forEach(element => {
+            element["number"] = currentNumber;
+            currentNumber++
+        });
+        return  this._sessions
     
   }
 }

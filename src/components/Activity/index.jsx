@@ -30,7 +30,7 @@ function Activity({datas}) {
                 <BarChart data={datas} barSize={ 7 }>
                 <CartesianGrid strokeDasharray="3" vertical={false} />
                 <XAxis dataKey="number"  tickLine={false}  tickMargin="15"/>
-                <YAxis orientation='right' axisLine={false} tickLine={false}/>
+                <YAxis allowDataOverflow={false} orientation='right' axisLine={false} tickLine={false}/>
                 <Tooltip  content={<CustomTooltip />}  cursor={{ fill: '#C4C4C480', fillOpacity: 0.5}}  wrapperStyle={{ outline: 'none' }}/>
                 <Legend 
                 payload={[{ value: 'Poids (Kg)', type: 'circle',  color: '#000' }, { value: 'Calories brulées (kCal)', type: 'circle',  color: '#f00' }]} 

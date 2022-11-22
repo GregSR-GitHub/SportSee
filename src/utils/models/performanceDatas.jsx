@@ -1,3 +1,9 @@
+/**
+ * Reformate performence datas for Recharts chart
+ * @param { Object } data
+ * @return { Object }
+ */
+
 import { Component } from 'react'
 
 class PerformanceDatas extends Component {
@@ -17,13 +23,21 @@ class PerformanceDatas extends Component {
         this._chartData = []
       }
 
-    
+  /**
+    * Get the user id value.
+    * @return {Number} The id.
+    */ 
   get userIdid () {
     return this._userIdid
   }
 
+  /**
+    * Get the reformated sessions datas for this user.
+    * @return {Array} The data.
+    */ 
   get datas () {
     this._chartData = []
+    // Remplace "kind" value by its french traduction for each object of the array.
     this._data.forEach(element => {
         const kindName = this._kind[element.kind];
         let newKind = {};

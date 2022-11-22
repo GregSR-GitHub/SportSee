@@ -1,3 +1,11 @@
+/**
+ * Display user infos datas
+ * @param { String } name
+ * @param { String } infos
+ * @param { String } icon - icon url
+ * @return { String }
+ */
+
 import './infoscard.css';
 import PropTypes from 'prop-types'
 
@@ -19,7 +27,7 @@ function InfosCard({name, infos, icon}) {
 InfosCard.propTypes = {
   name: PropTypes.string,
   infos: PropTypes.string,
-  sicon: PropTypes.string,
+  icon: PropTypes.string,
 }
 
 export default InfosCard;
