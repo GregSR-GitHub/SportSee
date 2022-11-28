@@ -23,7 +23,7 @@ import ActivityDatas from '../../utils/models/activityDatas';
     const  apiActivityData  =  useApi(`http://localhost:3000/user/${userId}/activity`);
     console.log(apiUserData);
 
-    // Display Profil page only if data are loaded
+    // Display Profil page only if datas are loaded
     if(!apiUserData.isLoading && !apiPerformanceData.isLoading && !apiSessionData.isLoading && !apiActivityData.isLoading){ 
       // Don't display Profil page only if there is a Api Error
       if(!apiUserData.error && !apiPerformanceData.error && !apiSessionData.error && !apiActivityData.error){ 

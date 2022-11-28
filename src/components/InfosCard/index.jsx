@@ -19,7 +19,7 @@ function InfosCard({name, infos}) {
   return (
     <aside className="infos-card">
         <div className='infos-card_icon'>
-        <img src={iconByType[name]} className="infos-icon" alt="{name}" />
+          {iconByType[name] && <img src={iconByType[name]} className="infos-icon" alt={name} />}
         </div>
         <div className='infos-card_text'>
             <span  className='infos-card_infos'>{infos}</span>
@@ -30,8 +30,8 @@ function InfosCard({name, infos}) {
 }
 
 InfosCard.propTypes = {
-  name: PropTypes.string,
-  infos: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  infos: PropTypes.string.isRequired
 }
 
 export default InfosCard;

@@ -25,7 +25,7 @@ Follow the instructions of the [back-end README](https://github.com/OpenClassroo
 
 ### Step 2 - Installing the frontend :
 
-Clonez le projet front-end dans le dossier Sportsee :
+Clone the front-end project :
 ```
 $ git clone https://github.com/GregSR-GitHub/SportSee.git
 ```

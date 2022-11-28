@@ -28,7 +28,7 @@ useEffect(() => {
             setError(true)
         } finally {
             setLoading(false)
-            }
+        }
     }
 
     fetchData()
