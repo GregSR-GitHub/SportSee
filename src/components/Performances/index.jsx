@@ -1,7 +1,7 @@
 /**
  * Display a chart based of the performences datas
- * @param { Array } datas
- * @return { String }
+ * @param { Array.<{kind: String, value: Number}> } datas
+ * @return { HTMLElement }
  */
 
 import './performances.css';

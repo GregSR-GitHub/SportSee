@@ -1,7 +1,7 @@
 /**
  * Display a chart based of the score datas
  * @param { Number } score
- * @return { String }
+ * @return { HTMLElement}
  */
 
 import './score.css';

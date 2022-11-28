@@ -1,7 +1,7 @@
 /**
  * Fetch data from the Api
  * @param { String } url
- * @return { Object }
+ * @return { Object.< datas: Object, isLoading: Boolean, error: Boolean>}
  */
 
 import { useState, useEffect } from 'react'
@@ -19,6 +19,10 @@ useEffect(() => {
             const response = await fetch(url)
             const data = await response.json()
             setData(data)
+            // if data is 'can not get user' it's an error
+            if(typeof(data) !== 'object'){
+                setError(true)
+            }
         } catch(err) {
             console.log(err)
             setError(true)

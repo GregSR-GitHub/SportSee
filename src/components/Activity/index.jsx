@@ -1,7 +1,7 @@
 /**
- * Display au chart based of the activity datas
- * @param { Array } datas
- * @return { String }
+ * Display au chart based of the activity datas 
+ * @param {Array.<{day: String, kilogram: Number, calories: Number}>} datas
+ * @return { HTMLElement }
  */
 
 import './activity.css';

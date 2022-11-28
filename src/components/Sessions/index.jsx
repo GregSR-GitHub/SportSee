@@ -1,7 +1,7 @@
 /**
  * Display a chart based of the session datas
- * @param { Array } datas
- * @return { String }
+ * @param { Array.<{day: String, value: Number}> } datas
+ * @return { HTMLElement }
  */
 
 import './sessions.css';
