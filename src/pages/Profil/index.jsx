@@ -11,29 +11,38 @@ import Sessions from '../../components/Sessions';
 import Activity from '../../components/Activity';
 import { useApi } from '../../utils/Api';
 import UserDatas from '../../utils/models/userDatas';
+// import Datas from '../../datas/datas.json'; // Mocked datas
 import PerformanceDatas from '../../utils/models/performanceDatas';
 import SessionsDatas from '../../utils/models/sessionsDatas';
 import ActivityDatas from '../../utils/models/activityDatas';
+import { useParams } from 'react-router-dom'
 
  function Profil() {
-    const  userId = 12;
+    let { userId } = useParams()
+    //if no param use this id
+    !userId && (userId='12')
     const  apiUserData =  useApi(`http://localhost:3000/user/${userId}`);
     const  apiPerformanceData  =  useApi(`http://localhost:3000/user/${userId}/performance`);
     const  apiSessionData  =  useApi(`http://localhost:3000/user/${userId}/average-sessions`);
     const  apiActivityData  =  useApi(`http://localhost:3000/user/${userId}/activity`);
-    console.log(apiUserData);
 
-    // Display Profil page only if datas are loaded
+    // Display Profil page only if datas are loaded (Must be change for true if you use the mocked data)
     if(!apiUserData.isLoading && !apiPerformanceData.isLoading && !apiSessionData.isLoading && !apiActivityData.isLoading){ 
-      // Don't display Profil page only if there is a Api Error
+      // Don't display Profil page only if there is a Api Error (Must be change for true if you use the mocked data)
       if(!apiUserData.error && !apiPerformanceData.error && !apiSessionData.error && !apiActivityData.error){ 
  
+        // Use Mocked datas
+        // let userDatas = new UserDatas(Datas.user_main_datas);
+        // let performanceDatas = new PerformanceDatas(Datas.user_performance);
+        // let sessionsDatas = new SessionsDatas(Datas.user_sessions);
+        // let activityDatas = new ActivityDatas(Datas.user_activity); 
+
+        // Use Api datas
         let userDatas = new UserDatas(apiUserData.datas.data);
         let performanceDatas = new PerformanceDatas(apiPerformanceData.datas.data);
         let sessionsDatas = new SessionsDatas(apiSessionData.datas.data);
         let activityDatas = new ActivityDatas(apiActivityData.datas.data); 
 
-        // console.log(activityDatas);
         return (
           <div className="profil">
             <h1>Bienvenue <span className="red">{userDatas.firstName}</span></h1>

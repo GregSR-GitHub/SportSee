@@ -42,3 +42,13 @@ $ npm install
 ```
 $ npm start
 ```
+
+### 2.3 Users Profil
+
+You can choose to change between the user 12 & 18 with those url:
+(By default the user 12 profil will be selected.)
+
+- `http://localhost:3000/user/12` - Retrieves user 12's main information.
+- `http://localhost:3000/user/18` - Retrieves user 18's main information.
+
+
